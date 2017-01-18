@@ -1,1 +1,1 @@
-include  ':notificationgenerator' //,':app' //, ':notificationgeneratorinterface', ':notificationreceiver', ':notificationreceiverinterface'
+include  ':notificationgenerator' ,':app' //, ':notificationgeneratorinterface', ':notificationreceiver', ':notificationreceiverinterface'

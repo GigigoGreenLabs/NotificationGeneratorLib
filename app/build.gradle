@@ -17,11 +17,32 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7 //java7
+    targetCompatibility JavaVersion.VERSION_1_7 //java7
+  }
+
+  productFlavors {
+    project {}
+    jitpack {}
+  }
+}
+configurations {
+  projectDebugCompile
+  jitpackDebugCompile
+  projectReleaseCompile
+  jitpackReleaseCompile
 }
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   testCompile 'junit:junit:4.12'
   compile 'com.android.support:appcompat-v7:25.0.0'
-  compile project(':notificationgenerator')
+
+  projectReleaseCompile project(':notificationgenerator')
+  projectDebugCompile project(':notificationgenerator')
+
+  jitpackDebugCompile 'com.github.GigigoGreenLabs:NotificationGeneratorLib:0.9'
+  jitpackReleaseCompile 'com.github.GigigoGreenLabs:NotificationGeneratorLib:0.9'
 }

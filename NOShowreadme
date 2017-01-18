@@ -32,3 +32,8 @@ crear el pending intetn a partir de->  public PendingIntent getPendingIntent(Has
 
 pruebas en apis antiguos
 tb falta el privatizar el package para exponer solo  lo necesario
+
+falta tb poner un api q no requiera el java 8 y  compileOptions {
+                                                    sourceCompatibility JavaVersion.VERSION_1_7 //java7
+                                                    targetCompatibility JavaVersion.VERSION_1_7 //java7
+                                                  }
