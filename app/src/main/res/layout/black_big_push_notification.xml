@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ox_layout_custom_local_notification"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:paddingBottom="2dp"
+    android:paddingEnd="8dp"
+    android:paddingRight="8dp"
+    android:paddingTop="2dp"
+    android:minHeight="144dp"
+    android:background="#54bd54">
+
+    <ImageView
+        android:id="@+id/app_notifimage_custom_local_notification"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:padding="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/notification_large_icon" />
+
+    <LinearLayout
+        android:id="@+id/app_linear_title_custom_local_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/app_notifimage_custom_local_notification"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/app_notiftitle_custom_local_notification"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:text="Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum"
+            android:textColor="#727272" />
+        <!--android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Title"-->
+
+        <DateTimeView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/app_time_custom_local_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:singleLine="true"
+            android:textColor="#666666" />
+        <!--android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Time"-->
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_linear_title_custom_local_notification"
+        android:layout_toEndOf="@id/app_notifimage_custom_local_notification"
+        android:layout_toRightOf="@id/app_notifimage_custom_local_notification">
+
+        <TextView
+            android:id="@+id/app_notiftext_custom_local_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:text="Lorem ipsum Lorem m Lorem ipsum m ipsum Lorem m Lorem im ipsum Lorem m Lorem im ipsum Lorem m Lorem im ipsum Lorem m Lorem i"
+            android:textColor="#666666" />
+<!--            android:textAppearance="@style/TextAppearance.StatusBar.EventContent"
+-->
+        <ImageView
+            android:id="@+id/app_notifimage_small_custom_local_notification"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/notification_color_small_icon" />
+
+    </RelativeLayout>
+</RelativeLayout>

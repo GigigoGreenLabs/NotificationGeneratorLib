@@ -1,0 +1,34 @@
+esta interfaz realmente no es super necesaria,
+ya que solo hay posibilidad de 1 implementación, o al menos una implementacion unica coetanea, ya que es el API de android el que nos
+determina la posibilidad de implementación.
+
+Aun así es mejor tirar de una interface, así no hay problema que en el futuro tegamos una app funcionando con la imple hastaAPI 25
+y despues la queramos subir a API 30.
+
+La implementacion será un unico proyecto pero va tener una cantidad ingente de flavours debido a que cuando se haga, no solo para generar notificaciones,
+se utilice como receptor de las mismas
+
+
+revisar esto:
+
+notificaitonGenerator /interface
+notificatorReceptor  /interface
+
+El notificationNotificationModel    Notification noti = new Notification();
+                                     NotificationCompat.Builder builder; se le deberia pasar como una implementacion, ya que con que cumpla
+                                     la impl sea de la support que sea. Ver como lo hace google y replicar la interface y probar con las
+                                     diferentes impl de la support
+
+
+
+    18/01/2017
+
+  FALTA para el Generator:
+
+
+  private String Flags_Notification="ESTO ESTA POR VER COMO VIAJE; ARRAY DE INT ES MAS CORRECTO";
+  private String Id_Notification="ESTO ESTA para ver si quieres q te tupa a notificaciones, o bien actualize una ya creada";
+crear el pending intetn a partir de->  public PendingIntent getPendingIntent(HashMap<String,Objects> hashMap) {
+
+pruebas en apis antiguos
+tb falta el privatizar el package para exponer solo  lo necesario
