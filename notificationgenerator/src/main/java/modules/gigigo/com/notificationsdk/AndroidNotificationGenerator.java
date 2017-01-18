@@ -36,8 +36,6 @@ public class AndroidNotificationGenerator {
     createNotification(orchextraNotification, pendingIntent, false);
   }
 
-
-
   private void createNotification(NotificationModel orchextraNotification,
       PendingIntent pendingIntent, boolean isPush) {
     Notification notification;
@@ -173,7 +171,7 @@ public class AndroidNotificationGenerator {
    /**/
     // NotificationCompat.Builder builder;
     Notification.Builder builder;
-    if (pendingIntent != null) {
+    //  if (pendingIntent != null) {
      /* builder = new NotificationCompat.Builder(context).setLargeIcon(largeIcon)
           .setSmallIcon(getSmallIconResourceId())
           .setContentTitle(notification.getTitle())
@@ -183,21 +181,21 @@ public class AndroidNotificationGenerator {
           .setWhen(System.currentTimeMillis())
           .setAutoCancel(true);
 */
-      builder = new Notification.Builder(context).setLargeIcon(largeIcon)
-          .setSmallIcon(getSmallIconResourceId())
-          .setContentTitle(notification.getTitle())
-          .setContentText(notification.getBody())
-          .setTicker(notification.getTitle())
-          .setContentIntent(pendingIntent)
-          .setWhen(System.currentTimeMillis())
-          .setAutoCancel(true);
+    builder = new Notification.Builder(context).setLargeIcon(largeIcon)
+        .setSmallIcon(getSmallIconResourceId())
+        .setContentTitle(notification.getTitle())
+        .setContentText(notification.getBody())
+        .setTicker(notification.getTitle())
+        .setContentIntent(pendingIntent) //todo esto si debe comprobar si pending intent !=null
+        .setWhen(System.currentTimeMillis())
+        .setAutoCancel(true);
 
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-        noti = builder.build();
-      } else {
-        noti = builder.getNotification();
-      }
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+      noti = builder.build();
+    } else {
+      noti = builder.getNotification();
     }
+    //}
     return noti;
   }
   //endregion
