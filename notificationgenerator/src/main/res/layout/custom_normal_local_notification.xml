@@ -31,10 +31,12 @@
             android:ellipsize="marquee"
             android:fadingEdge="horizontal"
             android:singleLine="true"
-            android:text="Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum"
+            android:text="Lorem ipsum L"
             android:textColor="#727272"
+            android:textStyle="bold"
+            android:textSize="16sp"
             />
-        <!--android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Title"-->
+        <!-- android:textColor="#727272" android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Title"-->
 
         <DateTimeView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/ox_time_custom_local_notification"
@@ -43,8 +45,10 @@
             android:layout_gravity="center"
             android:layout_weight="0"
             android:gravity="center"
+
             android:paddingLeft="8dp"
             android:paddingStart="8dp"
+            android:textSize="12sp"
             android:singleLine="true"
             android:textColor="#666666"
              />
@@ -63,7 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="24dp"
-        android:text="Lorem ipsum Lorem m Lorem ipsum m ipsum Lorem m Lorem im ipsum Lorem m Lorem im ipsum Lorem m Lorem im ipsum Lorem m Lorem i"
+        android:text="Lorem ipsum Lorem m Lorem   Lorem i"
         android:textColor="#666666"
         />
         <!--android:textAppearance="@style/TextAppearance.StatusBar.EventContent"-->

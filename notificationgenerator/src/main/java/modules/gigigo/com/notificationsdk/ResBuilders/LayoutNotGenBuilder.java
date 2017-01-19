@@ -9,8 +9,9 @@ public class LayoutNotGenBuilder {
 
   private int big_push_notification_layout = R.layout.custom_big_push_notification;
   private int big_local_notification_layout = R.layout.custom_big_local_notification;
+
   private int normal_push_notification_layout = R.layout.custom_normal_push_notification;
-  private int normal_local_notification_layout = R.layout.custom_big_push_notification;
+  private int normal_local_notification_layout = R.layout.custom_normal_local_notification;
 
   //region getters
   public int getBig_push_notification_layout() {

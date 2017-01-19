@@ -14,7 +14,9 @@ revisar esto:
 notificaitonGenerator /interface
 notificatorReceptor  /interface
 
-El notificationNotificationModel    Notification noti = new Notification();
+El notificationNotificationModel
+ Notification noti = new Notification();
+
                                      NotificationCompat.Builder builder; se le deberia pasar como una implementacion, ya que con que cumpla
                                      la impl sea de la support que sea. Ver como lo hace google y replicar la interface y probar con las
                                      diferentes impl de la support
@@ -28,7 +30,7 @@ El notificationNotificationModel    Notification noti = new Notification();
 
   private String Flags_Notification="ESTO ESTA POR VER COMO VIAJE; ARRAY DE INT ES MAS CORRECTO";
   private String Id_Notification="ESTO ESTA para ver si quieres q te tupa a notificaciones, o bien actualize una ya creada";
-crear el pending intetn a partir de->  public PendingIntent getPendingIntent(HashMap<String,Objects> hashMap) {
+ crear el pending intetn a partir de->  public PendingIntent getPendingIntent(HashMap<String,Objects> hashMap) {
 
 pruebas en apis antiguos
 tb falta el privatizar el package para exponer solo  lo necesario

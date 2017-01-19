@@ -43,6 +43,6 @@ dependencies {
   projectReleaseCompile project(':notificationgenerator')
   projectDebugCompile project(':notificationgenerator')
 
-  jitpackDebugCompile 'com.github.GigigoGreenLabs:NotificationGeneratorLib:0.9'
-  jitpackReleaseCompile 'com.github.GigigoGreenLabs:NotificationGeneratorLib:0.9'
+  jitpackDebugCompile 'com.github.GigigoGreenLabs:NotificationGeneratorLib:0.9.1'
+  jitpackReleaseCompile 'com.github.GigigoGreenLabs:NotificationGeneratorLib:0.9.1'
 }

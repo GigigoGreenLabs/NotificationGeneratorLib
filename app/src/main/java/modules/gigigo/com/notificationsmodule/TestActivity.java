@@ -44,7 +44,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     isPush = ((CompoundButton) findViewById(R.id.chk_is_push)).isChecked();
 
     if(isPush) title="PUSH "+title;
-        mNotificationGenerator.createNotification(title, body, isPush);
+        mNotificationGenerator.createNotification(title, body, isPush,mNotificationGenerator.getPendingIntent(new Bundle(),TestActivity.class,"MyAction"));
   }
 
   private void getViewsAndSetOnClickListener() {
@@ -63,14 +63,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     if (v.getId() == R.id.button3) {
-      //no pilla bien los ids en la NORMAL!, loremipsum a tope
       builder.setmLayoutNotGenBuilder(mLayoutNotGenBuilder);
       builder.setmViewIdNotGenBuilder(mViewIdNotGenBuilder);
     }
 
     if (v.getId() == R.id.button4) {
-      //no pilla bien los ids en la NORMAL!, loremipsum a tope
-      //nipilla bien todos los drawables(small color, muestra el original)
       builder.setmDrawablesNotGenBuilder(mDrawablesNotGenBuilder);
       builder.setmLayoutNotGenBuilder(mLayoutNotGenBuilder);
       builder.setmViewIdNotGenBuilder(mViewIdNotGenBuilder);
