@@ -1,7 +1,9 @@
 package modules.gigigo.com.notificationsmodule;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -43,8 +45,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     boolean isPush = false;
     isPush = ((CompoundButton) findViewById(R.id.chk_is_push)).isChecked();
 
-    if(isPush) title="PUSH "+title;
-        mNotificationGenerator.createNotification(title, body, isPush,mNotificationGenerator.getPendingIntent(new Bundle(),TestActivity.class,"MyAction"));
+    if (isPush) title = "PUSH " + title;
+    mNotificationGenerator.createNotification(title, body, isPush, getPendingIntent("urlscheme"));
+
   }
 
   private void getViewsAndSetOnClickListener() {
@@ -74,5 +77,19 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     createNotification(builder, title, body);
+  }
+
+  public static final String EXTRA_NOTIFICATION_PUSH_URL_SCHEME_ACTION =
+      "EXTRA_NOTIFICATION_PUSH_URL_SCHEME_ACTION";
+
+  public PendingIntent getPendingIntent(String UrlScheme) {
+     Intent i = new Intent(this, MyBroadCastReceiver.class);
+    i.putExtra(EXTRA_NOTIFICATION_PUSH_URL_SCHEME_ACTION, UrlScheme);
+    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
+        | Intent.FLAG_ACTIVITY_NEW_TASK
+        | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+    int notificationId = 1;
+    return PendingIntent.getBroadcast(this, notificationId, i, PendingIntent.FLAG_UPDATE_CURRENT);
   }
 }
