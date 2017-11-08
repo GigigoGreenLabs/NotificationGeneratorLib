@@ -10,9 +10,14 @@ import modules.gigigo.com.notificationsdk.Builders.NotificationGeneratorBuilder;
  */
 public class NotificationGenerator {
   public static NotificationGeneratorBuilder mBuilder;
+  private static String mNotificationOreoId;
+  private static String mNotificationOreoName;
 
-  public static void initResources(NotificationGeneratorBuilder builder) {
+  public static void initResources(NotificationGeneratorBuilder builder, String notificationOreoId,
+      String notificationOreoName) {
     mBuilder = builder;
+    mNotificationOreoId = notificationOreoId;
+    mNotificationOreoName = notificationOreoName;
   }
 
   public static void createNotification(String title, String body) {
@@ -22,7 +27,7 @@ public class NotificationGenerator {
   public static void createNotification(String title, String body, boolean isPush,
       PendingIntent pendingIntent) throws RuntimeException {
     if (mBuilder.getmContext() != null) {
-      AndroidNotificationGenerator a = new AndroidNotificationGenerator(mBuilder);
+      AndroidNotificationGenerator a = new AndroidNotificationGenerator(mBuilder, mNotificationOreoId, mNotificationOreoName);
       NotificationModel n = new NotificationModel(title, body);
       if (isPush) {
         a.createNotificationPush(n, pendingIntent);
@@ -35,7 +40,7 @@ public class NotificationGenerator {
   }
 
   public PendingIntent getPendingIntent(Bundle extras, Class classe, String actionStr) {
-    return getPendingIntent(  extras, classe, actionStr, 1);
+    return getPendingIntent(extras, classe, actionStr, 1);
   }
 
   public PendingIntent getPendingIntent(Bundle extras, Class classe, String actionStr,
@@ -52,6 +57,4 @@ public class NotificationGenerator {
       return null;
     }
   }
-
-
 }

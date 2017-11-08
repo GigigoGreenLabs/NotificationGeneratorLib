@@ -34,7 +34,7 @@
             android:text="Lorem ipsum L"
             android:textColor="#727272"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="16dp"
             />
         <!-- android:textColor="#727272" android:textAppearance="@style/TextAppearance.StatusBar.EventContent.Title"-->
 
@@ -48,7 +48,7 @@
 
             android:paddingLeft="8dp"
             android:paddingStart="8dp"
-            android:textSize="12sp"
+            android:textSize="12dp"
             android:singleLine="true"
             android:textColor="#666666"
              />

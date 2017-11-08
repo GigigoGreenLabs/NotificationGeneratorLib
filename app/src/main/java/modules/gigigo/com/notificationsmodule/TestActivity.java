@@ -41,12 +41,12 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
   }
 
   private void createNotification(NotificationGeneratorBuilder builder, String title, String body) {
-    mNotificationGenerator.initResources(builder);
+    NotificationGenerator.initResources(builder, getPackageName(), "Notifications Name");
     boolean isPush = false;
     isPush = ((CompoundButton) findViewById(R.id.chk_is_push)).isChecked();
 
     if (isPush) title = "PUSH " + title;
-    mNotificationGenerator.createNotification(title, body, isPush, getPendingIntent("urlscheme"));
+    NotificationGenerator.createNotification(title, body, isPush, getPendingIntent("urlscheme"));
 
   }
 
